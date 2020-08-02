@@ -1,0 +1,25 @@
+{
+  "name": "csv-quote-comma-to-array",
+  "version": "1.0.0",
+  "description": "converts a line of quote-comma delimited CSV to an array of values",
+  "main": "src/csv-quote-comma-to-array.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aharui/csv-quote-comma-to-array.git"
+  },
+  "keywords": [
+    "CSV",
+    "quote",
+    "comma",
+    "array"
+  ],
+  "author": "Alex Harui",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aharui/csv-quote-comma-to-array/issues"
+  },
+  "homepage": "https://github.com/aharui/csv-quote-comma-to-array#readme"
+}

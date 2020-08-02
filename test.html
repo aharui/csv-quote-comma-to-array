@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="src/csv-quote-comma-to-array.js"></script>
+<script type="text/javascript">
+function runTest() {
+	var input = document.getElementById('input');
+	var value = input.value;
+	var output = CSVQuoteCommaToArray(value);
+	var outputString = "";
+	var n = output.length;
+	for (var i = 0; i < n; i++) {
+		if (i > 0)
+		    outputString += ",";
+		value = output[i];
+		if (typeof(value) === 'string')
+		    outputString += '"' + value + '"';
+	    else
+		    outputString += value;
+	}
+	var outputSpan = document.getElementById('output');
+	outputSpan.innerHTML = outputString;	 
+}
+</script>
+<title>CSV Quote Comma to Array Test</title>
+</head>
+
+<body style="width:100%;background-color:#0ff">
+<div style="margin-left:10px">Enter line of Quote-Comma delimited CSV</div>
+<input id="input" type="text" style="margin-left:10px;margin-right:10px;width:calc(100% - 100px)" /><button onclick="runTest()">Test</button>
+<p>
+<span id="output" style="margin-left:10px">output</span>
+</p>
+</body>
+</html>
