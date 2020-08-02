@@ -36,6 +36,7 @@ function CSVQuoteCommaToArray(lineOfCSV) {
   var n = lineOfCSV.length;
   for (var i = 0; i < n; i++) {
     var c = lineOfCSV.charAt(i);
+	if (c == '\r') continue;
     if (inQuote) {
       if (c === '"') {
         inQuote = false;
@@ -109,3 +110,4 @@ function CSVQuoteCommaToArray(lineOfCSV) {
   return output;
 }
 
+exports.CSVQuoteCommaToArray = CSVQuoteCommaToArray;
