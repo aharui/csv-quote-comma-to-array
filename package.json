@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/aharui/csv-quote-comma-to-array/issues"
   },
-  "homepage": "https://github.com/aharui/csv-quote-comma-to-array#readme"
+  "homepage": "https://github.com/aharui/csv-quote-comma-to-array#readme",
+  "devDependencies": {
+    "typescript": "^3.9.7"
+  }
 }
