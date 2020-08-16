@@ -22,20 +22,19 @@ DEALINGS IN THE SOFTWARE.
 
 /**
  * Parse a line of quote-comma into an array of values
- * @param lineOfCSV string line of text
- * @return Array
+ * @param lineOfCSV line of text
  */
-function CSVQuoteCommaToArray(lineOfCSV) {
-  var numString = "";
-  var textString = "";
-  var output = [];
-  var couldBeInt = true;
-  var couldBeNumber = true;
-  var inQuote = false;
-  var sawDecimal = false;
-  var n = lineOfCSV.length;
-  for (var i = 0; i < n; i++) {
-    var c = lineOfCSV.charAt(i);
+export function CSVQuoteCommaToArray(lineOfCSV:string):(string|number)[] {
+  let numString = "";
+  let textString = "";
+  let output:(string|number)[] = [];
+  let couldBeInt = true;
+  let couldBeNumber = true;
+  let inQuote = false;
+  let sawDecimal = false;
+  let n = lineOfCSV.length;
+  for (let i = 0; i < n; i++) {
+    let c = lineOfCSV.charAt(i);
 	if (c == '\r') continue;
     if (inQuote) {
       if (c === '"') {
@@ -76,7 +75,7 @@ function CSVQuoteCommaToArray(lineOfCSV) {
         textString = "";
         couldBeInt = true;
         couldBeNumber = true;
-		sawDecimal = false;
+		    sawDecimal = false;
       } else {
         textString += c;
         if (c === '.') {
@@ -109,5 +108,3 @@ function CSVQuoteCommaToArray(lineOfCSV) {
   }
   return output;
 }
-
-exports.CSVQuoteCommaToArray = CSVQuoteCommaToArray;
